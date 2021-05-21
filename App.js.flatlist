@@ -1,0 +1,46 @@
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+} from "react-native";
+
+
+export default function App() {
+
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={[
+          {key: "1", nombre: 'Ricardo'},
+          {key: "2", nombre: 'Chanchito'},
+          {key: "3", nombre: 'Ricardo'},
+          {key: "4", nombre: 'Ricardo'},
+          {key: "5", nombre: 'Ricardo'},
+          {key: "6", nombre: 'Ricardo'},
+        ]}
+        renderItem={({item})=><Text style={styles.item}>{item.nombre}</Text>}
+      />
+      <StatusBar style="ato" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  item: {
+    padding: 10,
+    fontSize: 22,
+    height: 50,
+    borderBottomColor: '#ccc',
+    borderBottomWidth: 1,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "stretch",
+    justifyContent: "center",
+    paddingTop: 22,
+  },
+});

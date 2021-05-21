@@ -1,0 +1,107 @@
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Dimensions,
+  Button,
+  TouchableHighlight,
+  TouchableNativeFeedback,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  ScrollView,
+} from "react-native";
+
+// const {width, height} = Dimensions.get('window');
+
+export default function App() {
+  const [text, setText] = useState("");
+  const [submit, setSubmit] = useState("");
+
+  return (
+    <View style={styles.container}>
+      <ScrollView style={styles.ScrollView}>
+        <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sitv</Text>
+        <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sitv</Text>
+        <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sitv</Text>
+        <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sitv</Text>
+        <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sitv</Text>
+        <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sitv</Text>
+      <Text>Texto: {submit}</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Escribe aca"
+        onChangeText={(t) => setText(t)}
+        defaultValue={text}
+      />
+      <Button
+        onPress={() => {
+          setSubmit(text);
+          alert("Texto Enviado con exito");
+        }}
+        title="Aceptar"
+      />
+      <TouchableHighlight
+        onPress={() => alert("TouchableHighlight")}
+        underlayColor={"#0f0"}
+        activeOpacity={0.2}
+      >
+        <Text>Aceptar</Text>
+      </TouchableHighlight>
+      <TouchableNativeFeedback
+        background={TouchableNativeFeedback.Ripple("#00f", true)}
+        onPress={() => alert("TouchableNativeFeedback")}
+      >
+        <View style={styles.view}>
+          <Text>Aceptar</Text>
+        </View>
+      </TouchableNativeFeedback>
+      <TouchableOpacity
+        styles={styles.TouchableOpacity}
+        onPress={() => alert("TouchableOpacity")}
+      >
+        <View style={styles.view}>
+          <Text>Aceptar</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback
+        styles={styles.TouchableOpacity}
+        onPress={() => alert("TouchableWithoutFeedback")}
+      >
+        <View style={styles.view}>
+          <Text>Aceptar</Text>
+        </View>
+      </TouchableWithoutFeedback></ScrollView>
+      <StatusBar style="ato" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  TouchableOpacity: {
+    backgroundColor: "#ccc",
+  },
+  view: {
+    height: 40,
+    width: 300,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  input: {
+    height: 40,
+    borderBottomColor: "#ccc",
+    borderBottomWidth: 1,
+    width: "100%",
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  ScrollView: {
+    width: Dimensions.get('window').width
+  }
+});

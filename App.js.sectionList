@@ -1,0 +1,73 @@
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View, SectionList } from "react-native";
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <SectionList
+        sections={[
+          {
+            title: "Grupo 1",
+            data: [
+              { key: "1", nombre: "Ricardo" },
+              { key: "2", nombre: "Chanchito" },
+              { key: "3", nombre: "Ricardo" },
+              { key: "4", nombre: "Ricardo" },
+              { key: "5", nombre: "Ricardo" },
+            ],
+          },{
+            title: "Grupo 2",
+            data: [
+              { key: "10", nombre: "Ricardo" },
+              { key: "6", nombre: "Chanchito" },
+              { key: "7", nombre: "Ricardo" },
+              { key: "8", nombre: "Ricardo" },
+              { key: "9", nombre: "Ricardo" },
+            ],
+          },{
+            title: "Grupo 3",
+            data: [
+              { key: "11", nombre: "Ricardo" },
+              { key: "12", nombre: "Chanchito" },
+              { key: "13", nombre: "Ricardo" },
+              { key: "14", nombre: "Ricardo" },
+              { key: "15", nombre: "Ricardo" },
+            ],
+          },
+
+        ]}
+        renderItem={({item}) => <Text style={styles.item}>{item.nombre}</Text>}
+        renderSectionHeader={({section})=> <Text style={styles.section}>{section.title}</Text>}
+      />
+      <Text>hola</Text>
+      <StatusBar style="light" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  section: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    backgroundColor: '#eee',
+    paddingTop: 2,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 2,
+  },
+  item: {
+    padding: 10,
+    fontSize: 22,
+    height: 50,
+    borderBottomColor: "#ccc",
+    borderBottomWidth: 1,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "stretch",
+    justifyContent: "center",
+    paddingTop: 22,
+  },
+});
